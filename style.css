@@ -5,10 +5,10 @@ body {
 path {
   stroke-width: 1px;
   stroke: white;
-  fill: steelblue;
+  fill: rgb(213,222,217);
   cursor: pointer;
 }
 
 path:hover, path.highlighted {
-  fill: tomato;
+  fill: #f6faf5;
 }

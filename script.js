@@ -11,10 +11,18 @@ var projection = d3.geoAlbersUsa()
 var path = d3.geoPath() 
     .projection(projection);
 
-//Create an SVG
+//Create an SVG for the map
 var svg = d3.select("body").append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .attr("float", "left");
+
+//adding this infobox to show info about that state (another svg)
+var infoBox = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("float", "left")
+    .text("test");
 
 //Group for the map features
 var features = svg.append("g")
@@ -37,7 +45,7 @@ d3.json("us-states.json").then(function(geodata) {
 // Add optional onClick events for features here
 // d.properties contains the attributes (e.g. d.properties.name, d.properties.population)
 function clicked(d,i) {
-
+    console.log('clicked', d.properties.name)
 }
 
 
